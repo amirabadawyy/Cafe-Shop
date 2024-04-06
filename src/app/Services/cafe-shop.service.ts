@@ -22,7 +22,6 @@ export class CafeShopService {
   updateProduct(id:any,product:any){
 
     return this.http.put(`${this.DB_URL}/products/${id}`, product)
-
   }
   deleteProduct(id:any){
     return this.http.delete(`${this.DB_URL}/products/${id}`)

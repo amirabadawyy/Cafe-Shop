@@ -1,0 +1,27 @@
+
+@media (max-width: 376px) {
+    .container-fluid{
+        width: 75% !important;
+    }
+    
+    .form-label{
+        font-size: 12pt;
+    }
+    .img{
+        width: 50%  !important;
+        margin-left:  .8rem !important;
+    }
+    .btn{
+        margin: 1.4rem auto ;
+    }
+    .text-start{
+        font-size: 14pt;
+        font-weight: bold;
+    }
+}
+@media (max-width: 1153px){
+    .container-fluid{
+        width: 75% !important;
+    }
+
+}

@@ -1,33 +1,44 @@
-<div class="container-fluid " style="margin-top: 10rem; background-color: bisque;" >
-    <h1 class=" text-center" style="color: #58300d;">Add New Product</h1>
-    <form [formGroup]="myRegValid" class="form  m-2 p-5" style="width: 1591px">
+<div style="margin-top: 14rem;" class="container-fluid mb-5  w-50" >
+    <h2 class=" text-center" style="color: #58300d;">Add New Product</h2>
+    <form [formGroup]="myRegValid"  style="background-color: #b57945;box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    transition: all .2s ease-in-out; font-size:15pt;font-weight: 600; border-radius: 15px;" class="form p-4">
 
-        <div class="form-group d-flex text-center m-auto mt-2 mb-2 w-25">
-            <input #title formControlName="title" type="text" class="form-control w-75" placeholder="Title">
+        <div class="form-group row mb-3">
+            <div class="col-12">
+                <input #title formControlName="title" type="text" class="form-control w-100" placeholder="Title">
+            </div>
+        </div>
+        <div class="form-group row mb-3 ">
+            <div class="col-12">
+                <input #description formControlName="description" type="text" class="form-control w-100 " placeholder="Description">
+            </div>
         </div>
 
-        <div class="form-group d-flex text-center m-auto mt-2 mb-2 w-25">
-            <input #description formControlName="description" type="text" class="form-control w-75 " placeholder="Description">
+        <div class="form-group row mb-3 ">
+            <div class="col-12">
+                <input #ingredients formControlName="ingredients" type="text" class="form-control w-100" placeholder="Ingredients">
+            </div>
         </div>
 
-        <div class="form-group d-flex text-center m-auto mt-2 mb-2 w-25">
-            <input #ingredients formControlName="ingredients" type="text" class="form-control w-75" placeholder="Ingredients">
+        <div class="form-group row mb-3 ">
+            <div class="col-12">
+                <input #image formControlName="image" type="text" class="form-control w-100" placeholder="Image URL">
+            </div>
         </div>
 
-        <div class="form-group d-flex text-center m-auto mt-2 mb-2 w-25">
-            <input #image formControlName="image" type="text" class="form-control w-75" placeholder="Image URL">
+        <div class="form-group row mb-3 ">
+            <div class="col-12">
+                <input #category formControlName="category" type="text" class="form-control w-100" placeholder="Category">
+            </div>
         </div>
-
-        <div class="form-group d-flex text-center m-auto mt-2 mb-2 w-25">
-            <input #category formControlName="category" type="text" class="form-control w-75" placeholder="Category">
+        <div class="form-group row mb-3 ">
+            <div class="col-12">
+                <input #price formControlName="price" type="text" class="form-control w-100" placeholder="Price">
+            </div>
         </div>
-        <div class="form-group d-flex text-center m-auto mt-2 mb-2 w-25">
-            <input #price formControlName="price" type="text" class="form-control w-75" placeholder="Price">
-        </div>
-        <div class="form-group text-center m-auto mt-2 mb-2">
-
+        <div class="form-group " style="margin-top: 20px; display: flex; justify-content: center;">
             <button (click)="Addprd(title.value,description.value, ingredients.value, image.value,category.value,price.value)"
-                class="btn  mt-2 " style="margin-left: -95px; background-color: #58300d; color: white; ">ADD</button>
+                class="btn  mt-2  " style=" background-color: #58300d; color: white;width: 45%; ">ADD</button>
 
         </div>
     </form>

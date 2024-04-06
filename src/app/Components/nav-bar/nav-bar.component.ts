@@ -20,7 +20,7 @@ export class NavBarComponent implements OnInit {
   onLogout(){
     localStorage.clear()
     signOut(this.afAuth)
-    this.router.navigateByUrl("/")
+    this.router.navigateByUrl("/login")
   }
   cart: CartItem[] = [];
 
@@ -58,5 +58,3 @@ export class NavBarComponent implements OnInit {
     return  this.cart.length;
   }
 }
-
-

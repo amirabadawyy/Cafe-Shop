@@ -2,7 +2,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { CafeShopService } from '../../Services/cafe-shop.service';
 import { ActivatedRoute, Router } from '@angular/router';
-
 @Component({
   selector: 'app-update-delete-product',
   standalone: true,
@@ -14,7 +13,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class UpdateDeleteProductComponent  implements OnInit{
   ID: any;
   Product: any
-
   constructor(myActivated: ActivatedRoute, private ProductServ: CafeShopService, private router: Router) {
     this.ID = myActivated.snapshot.params["id"]
   }
@@ -48,29 +46,18 @@ export class UpdateDeleteProductComponent  implements OnInit{
      const  intPrice = parseInt(newProduct.price)
      newProduct.price= intPrice
 
-     this.ProductServ.updateProduct(this.ID,newProduct).subscribe({
+     this.ProductServ.updateProduct(this.ID, {...newProduct,reviews:this.Product.reviews}).subscribe({
       complete:()=>{
         console.log('updated')
         this.router.navigate(['products'])
       }
      })
-
-
-
    }
    
    Deleteprd(){
-
-    let res: any = confirm('Delete Product ?')
-
-    if (res) {
-
-      this.ProductServ.deleteProduct(this.ID).subscribe({
-        complete:()=>{
-          this.router.navigate(['products'])
-        }
-      })
-    
-    }
+    if (!window.confirm('Are you sure to delete ')) return;
+    this.ProductServ.deleteProduct(this.ID).subscribe();
+    alert("Deleted Successfully");
+    this.router.navigate(['/products']);
    }
 }

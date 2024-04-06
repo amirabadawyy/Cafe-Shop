@@ -8,7 +8,7 @@
       ],
       "image": "https://images.unsplash.com/photo-1494314671902-399b18174975?auto=format&fit=crop&q=80&w=1887&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "category": "hot drinks",
-      "price": 300,
+      "price": 200,
       "id": "1"
     },
     {
@@ -32,13 +32,8 @@
         "Foam"
       ],
       "image": "https://images.unsplash.com/photo-1557006021-b85faa2bc5e2?auto=format&fit=crop&q=80&w=1887&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "id": "3",
       "category": "hot drinks",
-      "price": 1.5,
-      "star": 4.5,
-      "description 2": "A cappuccino is a classic Italian coffee drink made with espresso, steamed milk, and milk foam. It is traditionally prepared with equal parts of each element, creating a beverage that is both strong and creamy with a delightful layer of foamy goodness on top. ",
-      "Country of Origin": "Brazil",
-      "quality": "grade B",
+      "price": 200,
       "reviews": [
         {
           "id": 5,
@@ -56,7 +51,8 @@
           "text": "Not impressed with the selection of teas.",
           "imageUrl": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         }
-      ]
+      ],
+      "id": "3"
     },
     {
       "title": "Hot Chocolate",
@@ -239,7 +235,7 @@
       ]
     },
     {
-      "title": "Chocolate Cake",
+      "title": "Chocolate Fudge",
       "description": "Indulge in the rich and decadent taste of chocolate with this moist and delightful chocolate cake. It's a bolder, with a stronger coffee flavor and a thicker consistency. you gonna like it .",
       "ingredients": [
         "Flour",
@@ -250,7 +246,7 @@
         "Milk",
         "Vanilla Extract"
       ],
-      "image": "https://images.unsplash.com/photo-1517427294546-5aa121f68e8a?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "image": "https://infooda.com/wp-content/uploads/2020/10/Top-5-Most-Popular-Sweets-In-The-World.jpg",
       "id": "9",
       "category": "desserts",
       "price": 3.5,
@@ -391,19 +387,6 @@
           "imageUrl": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         }
       ]
-    },
-    {
-      "id": "13",
-      "title": "fruity pancakes",
-      "description": "delicious pancakes topped with fresh fruits",
-      "ingredients": [
-        "flaour",
-        " eggs ",
-        " fresh fruits"
-      ],
-      "image": "https://www.lovefromtheoven.com/wp-content/uploads/2020/09/banana-pancakes-4.jpg",
-      "category": "dessert",
-      "price": 50
     }
   ],
   "category": [
@@ -468,6 +451,40 @@
       "email": "amirabadawy2001@gmail.com",
       "Password": "1234",
       "isAdmin": true
+    }
+  ],
+  "Reviews": [
+    {
+      "id": "1",
+      "rating": 4,
+      "author": "Sophie Anderson",
+      "date": "2024-04-05",
+      "review": "I recently visited this cafe and had a delightful experience. The cozy atmosphere, delicious coffee, and friendly staff exceeded my expectations. The central location made it convenient for meeting friends, and the cafe's commitment to quality and customer satisfaction left a lasting impression.",
+      "imageUrl": "https://images.unsplash.com/photo-1619895862022-09114b41f16f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "id": "2",
+      "rating": 5,
+      "author": "Alex Rodriguez",
+      "date": "2024-04-10",
+      "review": "This cafe offers a wonderful experience overall. The charming decor and tasty pastries provided a warm and inviting ambiance. While the service was consistently excellent, there were occasional delays during peak hours. The convenient location and reasonable prices make it a great spot for both locals and tourists.",
+      "imageUrl": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "id": "3",
+      "rating": 4,
+      "author": "Emma Baker",
+      "date": "2024-04-15",
+      "review": "Outstanding service and delightful treats! From the moment I stepped in, the staff went above and beyond to ensure a memorable visit. The attention to detail in food quality, the variety of beverages, and the welcoming atmosphere truly set this cafe apart. I highly recommend it for a top-notch coffee experience.",
+      "imageUrl": "https://plus.unsplash.com/premium_photo-1664541336896-b3d5f7dec9a3?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "id": "4",
+      "rating": 3,
+      "author": "Michael Thompson",
+      "date": "2024-04-20",
+      "review": "My experience at this cafe was decent. The ambiance was nice, and the coffee was satisfactory, though nothing particularly stood out. While the staff was polite, there seemed to be a lack of attention during busy hours. It's a decent option for a quick coffee fix, but I wouldn't necessarily go out of my way to visit again.",
+      "imageUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     }
   ],
   "cart": [],

@@ -13,17 +13,8 @@ import { LoginComponent } from './Components/login/login.component';
 import { FavouriteComponent } from './Components/favourite/favourite.component';
 
 export const routes: Routes = [
- {path:"",redirectTo:"login",pathMatch:"full"},
+ {path:"",redirectTo:"home",pathMatch:"full"},
  {path:"login",component:LoginComponent},
-//  {path:"home",component:HomeComponent},
-//  {path:"shop", component:ShopComponent},
-//  {path:"cart",component:CartComponent},
-//  {path:"contact",component:ContactComponent},
-//  {path:"shopdetails/:id", component:ShopdetailsComponent},
-//  {path:"products",component:ProductsComponent},
-//  {path:"update/:id",component:UpdateDeleteProductComponent},
-//  {path:"add",component:AddProductsComponent},
-//  {path:"reviews",component:ReviewsComponent},
 {path:"", component:NavBarComponent, children:[
     {path:"home",component:HomeComponent},
     {path:"products",component:ProductsComponent},
@@ -36,7 +27,7 @@ export const routes: Routes = [
      {path:"add",component:AddProductsComponent},
      {path:"reviews",component:ReviewsComponent},
     {path:'favourite', component:FavouriteComponent},
-    // {path:"**",component:ErrorComponent}
+   
 ]}
 
 

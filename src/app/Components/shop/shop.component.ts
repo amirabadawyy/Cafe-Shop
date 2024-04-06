@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CafeShopService } from '../../Services/cafe-shop.service';
 import { HttpClientModule } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { Product } from '../../Models/Product';
 import { NotificationService } from '../../Services/notification.service';
 // import { Cafe } from '../../../Models/Cafe';
@@ -15,19 +15,29 @@ import { NotificationService } from '../../Services/notification.service';
   styleUrl: './shop.component.css'
 })
 export class ShopComponent implements OnInit{
-constructor(private shopServ:CafeShopService, private notificServ:NotificationService){}
+
+constructor(private shopServ:CafeShopService, private notificServ:NotificationService,private router:Router){}
 Products:any=[];
 Cart: any = [];
 FavProducts:any=[];
 categories:any=[];
+currentUser:any
 filteredArray:any=[];
   ngOnInit(): void { 
+    this.currentUser = JSON.parse(localStorage.getItem("currentUser") || "{}");
+ if(this.currentUser.isAdmin){
+    alert('shop page is for Users');
+    this.router.navigateByUrl('/')  
+  }
+    else{
 this.GetAll()
 this.getCategory()
+    }
+
   }
   GetAll(){
     this.shopServ.GetAllProducts().subscribe({
-      next:(data)=>{
+    next:(data)=>{
     this.Products=data;
     this.filteredArray=data
       }
@@ -56,6 +66,7 @@ console.log(this.filteredArray)
 
 
 addToFav(product: any):void{
+  if(Object.keys(this.currentUser).length!==0){
   this.FavProducts =  JSON.parse(localStorage.getItem( "Favourite" )||"[]");
   if (this.FavProducts.length !== 0) {
     let foundedProd = this.FavProducts.find((e:any) => e.id === product.id) 
@@ -72,30 +83,32 @@ addToFav(product: any):void{
   }
   localStorage.setItem('Favourite', JSON.stringify(this.FavProducts));
 }
+else{
+  alert("Please Login First")
+ }
+}
 
 addToCart(product: Product): void { 
-  this.Cart = JSON.parse(localStorage.getItem('cart') || "[]");
+  if(Object.keys(this.currentUser).length!==0){
+    this.Cart = JSON.parse(localStorage.getItem('cart') || "[]");
   if (this.Cart.length !== 0) {
     let foundedProd = this.Cart.find((e:any) => e.id === product.id) 
     if (foundedProd) {
-            // this.notificServ.showSuccess(`${product.title} Already In The Card 
-            // Quantity Updated ${foundedProd.quantity}`);
             foundedProd.quantity++;
             alert(`${product.title} Already In The Card 
                 Quantity Updated ${foundedProd.quantity}`)
     } else {
-    // this.notificServ.showSuccess(`${product.title}  Added To Your Card`);
       alert(`${product.title}  Added To Your Card`);
       this.Cart.push({...product, quantity : 1 });
     }
   } else {
-    // this.notificServ.showSuccess(`${product.title}  Added To Your Card`);
     alert(`${product.title}  Added To Your Card`);
-
     this.Cart.push({...product, quantity : 1 });
   }
   localStorage.setItem('cart', JSON.stringify(this.Cart));
-  // setTimeout(()=>location.reload(),4000);
-  // console.log(product)
+}
+else{
+  alert("Please Login First")
+ }
 }
 }

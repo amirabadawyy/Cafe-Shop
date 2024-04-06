@@ -1,6 +1,5 @@
 import { HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-// import { CartapiService } from '../../Services/cartapi.service';
 import { NotificationService } from '../../Services/notification.service';
 import { Router } from '@angular/router';
 
@@ -13,24 +12,38 @@ import { Router } from '@angular/router';
   styleUrl: './cart.component.css'
 })
 export class CartComponent implements OnInit {
-  CartItems: any;
+  CartItems: any=[];
   totalPrice: number=0;
   constructor(private notificServ:NotificationService,private router:Router) { }
   ngOnInit(): void {
-    this.CartItems = JSON.parse(localStorage.getItem('cart') || "Empty Card")
-    console.log(this.CartItems);
+    let currentUser = JSON.parse(localStorage.getItem("currentUser") || "{}");
+    if(Object.keys(currentUser).length===0){
+      alert('Please login first');
+      this.router.navigateByUrl('/login')
+    }
+    else if(currentUser.isAdmin){
+      alert('You are admin you do not have cart');
+      this.router.navigateByUrl('/')
+    }
+    else{
+      //new
+      this.CartItems = JSON.parse(localStorage.getItem('cart') || "[]")
+      if(this.CartItems.length===0){
+        alert("Your  cart is empty , please add any product to display it")
+        this.router.navigate(['/shop'])
+      }
+    }
   }
   decQuant(cartItem: any) {
     if (cartItem.quantity > 0) {
         cartItem.quantity--;
     }
-    // console.log("Quantity Decreased")
+
   }
   incQuant(cartItem: any) {
     if (cartItem.quantity >= 0) {
         cartItem.quantity++;
     }
-    // console.log("Quantity Decreased")
   }
   removeCartItem(cartItem:any) {
     this.CartItems = this.CartItems.filter((item: any) => item.id !== cartItem.id)
