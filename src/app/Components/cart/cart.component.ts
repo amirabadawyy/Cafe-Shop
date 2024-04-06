@@ -50,7 +50,6 @@ export class CartComponent implements OnInit {
     localStorage.setItem("cart", JSON.stringify(this.CartItems))
     // alert(`${cartItem.title}  Removed From Your Card`);
     this.notificServ.showSuccess(`${cartItem.title}  Removed From Your Card`);
-    setTimeout(()=>location.reload(),4000);
   }
 
   
