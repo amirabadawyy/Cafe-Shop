@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class CafeShopService {
-  private DB_URL='http://localhost:3000'
+  private DB_URL='https://api.myjson.online/v1/records/f79434d2-e380-42b0-ba25-8613c072166a'
   constructor(private http:HttpClient) { }
   GetAllProducts(){
     return this.http.get(`${this.DB_URL}/products`);
