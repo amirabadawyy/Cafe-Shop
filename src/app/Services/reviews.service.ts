@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ReviewsService {
-  private DB_URL='https://api.myjson.online/v1/records/f79434d2-e380-42b0-ba25-8613c072166a'
+  private DB_URL='https://jsonkeeper.com/b/YG2G'
   constructor(private http:HttpClient) { }
   GetReviews(){
     return this.http.get(`${this.DB_URL}/Reviews`)
