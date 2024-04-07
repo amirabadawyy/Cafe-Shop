@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class CafeShopService {
-  private DB_URL='https://jsonkeeper.com/b/YG2G'
+  private DB_URL='https://cafeshop-data.onrender.com/'
   constructor(private http:HttpClient) { }
   GetAllProducts(){
     return this.http.get(`${this.DB_URL}/products`);
