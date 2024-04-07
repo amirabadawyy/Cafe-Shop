@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class UserService {
   constructor(private http:HttpClient) { }
-  private DB_URL =  "https://jsonkeeper.com/b/YG2G"
+  private DB_URL =  "https://cafeshop-data.onrender.com/"
   getAllUsers(){
     return this.http.get(this.DB_URL);
   }
