@@ -8,6 +8,6 @@ export class UserService {
   constructor(private http:HttpClient) { }
   private DB_URL =  "https://cafeshop-data.onrender.com"
   getAllUsers(){
-    return this.http.get(this.DB_URL);
+    return this.http.get(this.DB_URL/users);
   }
 }
